@@ -83,11 +83,11 @@ export function FormAddImage({ closeModal }: FormAddImageProps): JSX.Element {
           title: 'Imagem não adicionada',
           description: 'É preciso adicionar e aguardar o upload',
         });
-        return
+        return;
       }
-      await mutation.mutateAsync(data)
+      await mutation.mutateAsync(data);
       toast({
-        status: "success",
+        status: 'success',
         title: 'Imagem cadastrada',
         description: 'Sua imagem foi cadastrada',
       });
@@ -98,10 +98,10 @@ export function FormAddImage({ closeModal }: FormAddImageProps): JSX.Element {
         description: 'Ocorreu um erro ao tentar cadastrar a sua imagem',
       });
     } finally {
-      reset()
-      setImageUrl("")
-      setLocalImageUrl("")
-      closeModal()
+      reset();
+      setImageUrl('');
+      setLocalImageUrl('');
+      closeModal();
     }
   };
 
